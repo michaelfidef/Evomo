@@ -1,15 +1,22 @@
 package com.bangkit.evomo
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.bangkit.evomo.data.ScreenCamera
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.formatter.PercentFormatter
+import org.opencv.android.CameraBridgeViewBase
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,11 +28,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var incrementButton: Button
     private lateinit var defectiveButton: Button
     private lateinit var reworkButton: Button
+    private lateinit var btnCamera: Button
+
     private lateinit var pieChart: PieChart
 
     private var totalCounter = 0
     private var defectiveCounter = 0
     private var reworkCounter = 0
+
+    private var currentImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         incrementButton = findViewById(R.id.incrementButton)
         defectiveButton = findViewById(R.id.defectiveButton)
         reworkButton = findViewById(R.id.reworkButton)
+        btnCamera = findViewById(R.id.btnCamera)
         pieChart = findViewById(R.id.pieChart)
 
         incrementButton.setOnClickListener {
@@ -50,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
         reworkButton.setOnClickListener {
             incrementReworkCounter()
+        }
+
+        btnCamera.setOnClickListener {
+            onClickCamera()
         }
 
         updateCounterTextView()
@@ -72,6 +88,29 @@ class MainActivity : AppCompatActivity() {
         reworkCounter++
         updateCounterTextView()
         updatePieChart()
+    }
+
+    private fun onClickCamera() {
+        val intent = Intent(this@MainActivity, ScreenCamera::class.java)
+        startActivity(intent)
+    }
+
+    private val launcherGallery = registerForActivityResult(
+        ActivityResultContracts.PickVisualMedia()
+    ) { uri: Uri? ->
+        if (uri != null) {
+            currentImageUri = uri
+            Log.d("info", "URI: $currentImageUri")
+
+            testDetect()
+        } else {
+            Log.d("Photo Picker", "No media selected")
+        }
+    }
+
+    private fun testDetect() {
+        var cameraBridgeViewBase: CameraBridgeViewBase
+
     }
 
     private fun updateCounterTextView() {

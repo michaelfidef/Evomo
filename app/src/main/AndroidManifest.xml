@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<<<<<<< HEAD
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -12,10 +11,6 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:largeHeap="true"
-=======
-    <application
-        android:allowBackup="true"
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

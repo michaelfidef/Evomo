@@ -1,12 +1,10 @@
 package com.bangkit.evomo.data
 
-<<<<<<< HEAD
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.evomo.databinding.ActivityScreenCameraBinding
-import com.bangkit.evomo.ml.ConvertedModel
 import com.bangkit.evomo.ml.Yolov5DatasetSaveme
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.OpenCVLoader
@@ -20,41 +18,21 @@ import org.tensorflow.lite.support.common.FileUtil
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-=======
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.bangkit.evomo.databinding.ActivityScreenCameraBinding
-import org.opencv.android.CameraBridgeViewBase
-import org.opencv.core.Mat
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 
 class ScreenCamera : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListener2 {
 
     private lateinit var binding: ActivityScreenCameraBinding
-<<<<<<< HEAD
     private lateinit var cameraBridgeViewBase: CameraBridgeViewBase
     private lateinit var mCurrentFrame: Mat
     private lateinit var tflite: Yolov5DatasetSaveme
     private lateinit var viewModel: ScreenCameraViewModel
     private lateinit var label : List<String>
-=======
-
-    private var cameraBridgeViewBase: CameraBridgeViewBase? = null
-
-//    private var grayFrame: Mat? = null
-//    private var blurFrame: Mat? = null
-//    private var rgbFrame: Mat? = null
-//    private var outFrame: Mat? = null
-
-    private lateinit var mCurrentFrame: Mat
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityScreenCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
-<<<<<<< HEAD
         cameraBridgeViewBase = binding.cameraView
 
         initListener()
@@ -211,31 +189,3 @@ class ScreenCamera : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
         }
     }
 }
-=======
-        cameraBridgeViewBase = binding.cameraView;
-
-        initListener()
-    }
-
-    private fun initListener() {
-        cameraBridgeViewBase!!.setCvCameraViewListener(this)
-    }
-
-    override fun onCameraViewStarted(width: Int, height: Int) {
-        //
-    }
-
-    override fun onCameraViewStopped() {
-        //
-    }
-
-    override fun onCameraFrame(inputFrame: CameraBridgeViewBase.CvCameraViewFrame?): Mat {
-        if (inputFrame != null) {
-            mCurrentFrame = inputFrame.rgba()
-        }
-
-        return mCurrentFrame
-    }
-
-}
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c

@@ -1,10 +1,7 @@
 package com.bangkit.evomo
 
 import android.content.Intent
-<<<<<<< HEAD
 import android.content.pm.PackageManager
-=======
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -14,10 +11,7 @@ import android.widget.TextView
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-<<<<<<< HEAD
 import androidx.core.content.ContextCompat
-=======
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 import com.bangkit.evomo.data.ScreenCamera
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieEntry
@@ -25,10 +19,8 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.formatter.PercentFormatter
 import org.opencv.android.CameraBridgeViewBase
-<<<<<<< HEAD
 import org.opencv.android.OpenCVLoader
-=======
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -53,11 +45,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-<<<<<<< HEAD
         get_permission()
-
-=======
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 
         counterTextView = findViewById(R.id.counterTextView)
         defectiveCountTextView = findViewById(R.id.defectiveCountTextView)
@@ -112,24 +100,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private val launcherGallery = registerForActivityResult(
-        ActivityResultContracts.PickVisualMedia()
-    ) { uri: Uri? ->
-        if (uri != null) {
-            currentImageUri = uri
-            Log.d("info", "URI: $currentImageUri")
-
-            testDetect()
-        } else {
-            Log.d("Photo Picker", "No media selected")
-        }
-    }
-
-    private fun testDetect() {
-        var cameraBridgeViewBase: CameraBridgeViewBase
-
-    }
-
     private fun updateCounterTextView() {
         counterTextView.text = "Pass: $totalCounter"
         defectiveCountTextView.text = "Defective: $defectiveCounter"
@@ -164,13 +134,10 @@ class MainActivity : AppCompatActivity() {
         pieChart.data = data
         pieChart.invalidate()
     }
-<<<<<<< HEAD
 
     fun get_permission(){
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 101)
         }
     }
-=======
->>>>>>> d02830de3ea95d1cb31e4b8604577ddf320bef1c
 }

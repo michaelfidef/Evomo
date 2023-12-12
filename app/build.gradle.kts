@@ -4,6 +4,7 @@ import java.net.URI
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-parcelize")
 }
 
 
@@ -48,8 +49,6 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
-//    implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
-//    implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
     implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     testImplementation("junit:junit:4.13.2")
@@ -60,10 +59,11 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-support:0.3.0")
     implementation("org.tensorflow:tensorflow-lite-metadata:0.3.0")
     implementation ("org.tensorflow:tensorflow-lite:latest_version")
-//    implementation ("org.tensorflow:tensorflow-lite:1.12.0")
-//    implementation ("org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly-SNAPSHOT")
 
     implementation ("org.tensorflow:tensorflow-lite:0.0.0-nightly-SNAPSHOT")
+    implementation ("com.loopj.android:android-async-http:1.4.9")
+    implementation ("com.google.code.gson:gson:2.8.6")
+
     // This dependency adds the necessary TF op support.
     implementation ("org.tensorflow:tensorflow-lite-select-tf-ops:0.0.0-nightly-SNAPSHOT")
     implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
@@ -72,5 +72,16 @@ dependencies {
     // OpenCV
     implementation("com.quickbirdstudios:opencv:3.4.15")
 
-    //
+    //api
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.1.0")
+
+    // data
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+    implementation ("androidx.room:room-runtime:2.3.0")
 }

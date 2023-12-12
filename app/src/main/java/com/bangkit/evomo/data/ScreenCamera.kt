@@ -1,5 +1,6 @@
 package com.bangkit.evomo.data
 
+import android.graphics.Canvas
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -101,9 +102,6 @@ class ScreenCamera : AppCompatActivity(), CameraBridgeViewBase.CvCameraViewListe
 
                 // ... Process and display the results ...
                 processTFLiteOutput(outputFeature0)
-
-
-                // Release model resources
                 model.close();
 
                 Log.d("TAG", "DISINI1")

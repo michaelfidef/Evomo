@@ -14,7 +14,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
-import com.bangkit.evomo.MainActivity
+import com.bangkit.evomo.main.MainActivity
 import com.bangkit.evomo.R
 import com.bangkit.evomo.ViewModelFactory
 import com.bangkit.evomo.databinding.ActivityLoginBinding

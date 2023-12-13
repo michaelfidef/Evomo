@@ -1,6 +1,5 @@
 package com.bangkit.evomo.data
 
-import android.graphics.Canvas
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity

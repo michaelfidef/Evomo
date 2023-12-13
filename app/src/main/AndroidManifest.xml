@@ -22,8 +22,20 @@
         android:theme="@style/Theme.Evomo"
         tools:targetApi="31">
         <activity
+            android:name=".main.history.HistoryFragment"
+            android:exported="false" />
+        <activity
+            android:name=".main.profile.ProfileFragment"
+            android:exported="false" />
+        <activity
+            android:name=".main.operator.OperatorFragment"
+            android:exported="false" />
+        <activity
+            android:name=".main.home.HomeFragment"
+            android:exported="false" />
+        <activity
             android:name=".login.LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,8 +46,8 @@
             android:name=".data.ScreenCamera"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
+            android:name=".main.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
